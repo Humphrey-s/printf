@@ -44,11 +44,17 @@ int _printf(char *format, ...)
 			case 's':
 				ptr = va_arg(list, char *);
 
+				if (ptr == NULL || ptr[0] == '\0')
+				{
+				}
+				else
+				{
 				while (ptr[d] != '\0')
 				{
 					BUFF[bi] = ptr[d];
 					d++;
 					bi++;
+				}
 				}
 		
 				a = a + 1;
