@@ -13,7 +13,6 @@ int _printf(char *format, ...)
 	va_list list; int bi = 0, a = 0; char BUFF[BF_SIZE];
 	char *ptr;
 	int d = 0;
-	char c;
 
 	va_start(list, format);
 
@@ -68,11 +67,20 @@ int _printf(char *format, ...)
 				 a = a + 1;
 				 break;
 			default:
-				write(1, &c, 1);
+				bi = -20;
+				break;
 		}
 	}
 	}
 	va_end(list);
 
+	if (bi < 0)
+	{
+	return (write(2, "error\n", 6));
+	}
+	else
+	{
+
 return (write(1, &BUFF, bi));
+}
 }
