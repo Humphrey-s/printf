@@ -46,6 +46,7 @@ int _printf(char *format, ...)
 
 				if (ptr == NULL || ptr[0] == '\0')
 				{
+					BUFF[0] = '\0';
 				}
 				else
 				{
@@ -79,5 +80,13 @@ int _printf(char *format, ...)
 	}
 	va_end(list);
 
+	if (BUFF[0] == '\0')
+	{
+	return (write(1,"", 1));
+	}
+	else
+	{
+
 return (write(1, &BUFF, bi));
+}
 }
