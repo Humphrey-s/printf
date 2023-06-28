@@ -44,18 +44,12 @@ int _printf(char *format, ...)
 			case 's':
 				ptr = va_arg(list, char *);
 
-				if (ptr == NULL || ptr[0] == '\0')
-				{
-					BUFF[0] = '\0';
-				}
-				else
-				{
+	
 				while (ptr[d] != '\0')
 				{
 					BUFF[bi] = ptr[d];
 					d++;
 					bi++;
-				}
 				}
 		
 				a = a + 1;
@@ -80,13 +74,5 @@ int _printf(char *format, ...)
 	}
 	va_end(list);
 
-	if (BUFF[0] == '\0')
-	{
-	return (-1);
-	}
-	else
-	{
-
 return (write(1, &BUFF, bi));
-}
 }
