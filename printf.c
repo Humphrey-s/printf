@@ -74,13 +74,6 @@ int _printf(char *format, ...)
 	}
 	va_end(list);
 
-	if (bi < 0)
-	{
-	return (write(2, "error\n", 6));
-	}
-	else
-	{
 
 return (write(1, &BUFF, bi));
-}
 }
