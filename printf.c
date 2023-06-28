@@ -82,7 +82,7 @@ int _printf(char *format, ...)
 
 	if (BUFF[0] == '\0')
 	{
-	return (write(1,"", 1));
+	return (-1);
 	}
 	else
 	{
